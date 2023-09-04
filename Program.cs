@@ -35,9 +35,16 @@
                     Console.WriteLine($"{myNumb} -> {res}");
                 }
                 else Console.WriteLine($"{myNumb} -> Do not have third number.");
-
                 return true;
             case "3":
+                /*Напишите программу, которая принимает на вход цифру, 
+                обозначающую день недели, и проверяет, является ли этот день выходным.*/
+                Console.WriteLine("Enter a number of day: ");
+                int day = int.Parse(Console.ReadLine());
+                if (day<0&&day>8){
+                    Console.WriteLine($"{day} -> yes");
+                }
+                else Console.WriteLine($"{day} -> no");                
                 return true;
             case "4":
                 return true;
@@ -73,6 +80,12 @@
         }
         return count;
     }
+    /// <summary>
+    /// Поиск третьего числа
+    /// </summary>
+    /// <param name="countFunk"></param>
+    /// <param name="entNumber"></param>
+    /// <returns></returns>
     private static int ThirdNumb(int countFunk, int entNumber)
     {
         int multip = 1;
