@@ -41,12 +41,21 @@
                 обозначающую день недели, и проверяет, является ли этот день выходным.*/
                 Console.WriteLine("Enter a number of day: ");
                 int day = int.Parse(Console.ReadLine());
-                if (day<0&&day>8){
-                    Console.WriteLine($"{day} -> yes");
-                }
-                else Console.WriteLine($"{day} -> no");                
+                if (day > 5 && day < 8) Console.WriteLine($"{day} -> yes");
+                else Console.WriteLine($"{day} -> no");
                 return true;
             case "4":
+                /*Напишите программу, которая принимает на вход число N 
+                и выводит все простые числа в промежутке от 0 до N (включительно)*/
+                Console.Clear();
+                Console.WriteLine("Enter a number: ");
+                myNumb = int.Parse(Console.ReadLine());
+                Console.Write($"Prime numbers in the range from 0 to {myNumb}: ");
+                int start = 2;
+                while(start <= myNumb){
+                    if(IsPrime(start)) Console.Write(start+" ");
+                    start++;
+                }
                 return true;
             case "5":
                 return false;
@@ -97,4 +106,19 @@
         int thirdNumb = entNumber / multip % 10;
         return thirdNumb;
     }
+    /// <summary>
+    /// Проверка на простое число
+    /// </summary>
+    /// <param name="number"></param>
+    /// <returns></returns>
+    public static bool IsPrime(int number)
+    {
+        for (int i = 2; i < number; i++)
+        {
+            if (number % i == 0)
+                return false;
+        }
+        return true;
+    }
 }
+    
